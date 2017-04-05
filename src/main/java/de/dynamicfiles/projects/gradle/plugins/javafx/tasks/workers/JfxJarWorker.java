@@ -249,6 +249,7 @@ public class JfxJarWorker extends JfxAbstractWorker {
             try{
                 Path artifactPath = someFile.toPath();
                 String artifactFileName = artifactPath.getFileName().toString();
+                // TODO rework this, because the classes are located inside ${JAVA_HOME}/jmods/jdk.packager.services.jmod
                 if( "packager.jar".equals(artifactFileName) && !isPackagerJarToBeAdded ){
                     project.getLogger().info("Skipped adding packager.jar.");
                     return;

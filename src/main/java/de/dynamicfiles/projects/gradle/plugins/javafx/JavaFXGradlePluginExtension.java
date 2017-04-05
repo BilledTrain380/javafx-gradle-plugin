@@ -106,6 +106,8 @@ public class JavaFXGradlePluginExtension {
     @Deprecated
     private boolean checkForAbsolutePaths = true;
 
+    // TODO add java9 modules entries (instead of bundleArguments)
+    
     /*
      * generated methods below
      */

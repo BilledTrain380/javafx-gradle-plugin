@@ -40,6 +40,7 @@ import org.gradle.api.Project;
  */
 public class JavaFXGradlePlugin implements Plugin<Project> {
 
+    // TODO this won't work with jdk9 anymore, because the classes are located inside ${JAVA_HOME}/jmods/jdk.packager.jmod
     public static final String ANT_JAVAFX_JAR_FILENAME = "ant-javafx.jar";
 
     @Override
@@ -101,6 +102,7 @@ public class JavaFXGradlePlugin implements Plugin<Project> {
 
         // on java 9, we have a different path
         if( JavaDetectionTools.IS_JAVA_9 ){
+            // TODO rework this, because the classes are located inside ${JAVA_HOME}/jmods/jdk.packager.jmod (how do i load that dynamically?)
             jfxAntJarPath = "/lib/" + ANT_JAVAFX_JAR_FILENAME;
         }
 
